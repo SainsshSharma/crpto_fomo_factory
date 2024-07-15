@@ -69,17 +69,17 @@ export const Main = async () => {
     logging.info("----------------------------------------------------------");
   });
 
-//   const job = new CronJob(
-//     "*/15 * * * * *",
-//     async () => {
-//       for (const [key, value] of Object.entries(coinList)) {
-//         storeData(value);
-//       }
-//       console.log("data saved Success");
-//     },
-//     null,
-//     true,
-//   );
+  const job = new CronJob(
+    "*/15 * * * * *",
+    async () => {
+      for (const [key, value] of Object.entries(coinList)) {
+        storeData(value);
+      }
+      console.log("data saved Success");
+    },
+    null,
+    true
+  );
 };
 
 export const Shutdown = (callback: any) => {
